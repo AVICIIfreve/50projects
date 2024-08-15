@@ -46,7 +46,37 @@ body {
 .input {
     margin: 0;
     width: 300px;
-   
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    position: relative;
+}
+
+.email-input label,.password-input label{
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+ 
+.email-input label span,
+.password-input label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+.email-input input:focus + label span,
+.password-input input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+  }
+
+.input:focus,.input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
 }
 
 .tips-register {
@@ -64,9 +94,12 @@ body {
     display: block;
 }
 
+.login-button:focus {
+    outline: 0;
+  }
+
 .login-button:active {
-    padding: 12px 111px;
-    margin: 1px;
+    transform: scale(0.98);
 }
 
 .email-input .password-input .login-button-contain {
